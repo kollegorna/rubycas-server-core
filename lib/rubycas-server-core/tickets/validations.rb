@@ -43,9 +43,9 @@ module RubyCAS::Server::Core::Tickets
 
       if tgt = TicketGrantingTicket.find_by_ticket(ticket)
         if tgt.remember_me
-          max_lifetime = RubyCAS::Server::Core::Settings.maximum_session_lifetime
-        else
           max_lifetime = RubyCAS::Server::Core::Settings.maximum_remember_me_lifetime
+        else
+          max_lifetime = RubyCAS::Server::Core::Settings.maximum_session_lifetime
         end
 
         if tgt.expired?(max_lifetime)
