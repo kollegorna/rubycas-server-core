@@ -34,7 +34,7 @@ module RubyCAS
             tgt.ticket = "TGC-" + Util.random_string
             tgt.username = username
             tgt.remember_me = remember_me
-            tgt.extra_attributes = extra_attributes.to_s
+            tgt.extra_attributes = extra_attributes
             tgt.client_hostname = client
             if tgt.save!
               $LOG.debug("Generated ticket granting ticket '#{tgt.ticket}' for user" +
